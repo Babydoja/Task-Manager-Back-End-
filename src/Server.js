@@ -21,7 +21,7 @@ const userRoute = require('../route/Route')
 const cors = require('cors')
 app.use(cors(
     // {origin: ['http://localhost:3000']}
-    {origin: ['http://localhost:3000','https://task-manager-tau-ten.vercel.app/']}
+    {origin: ['http://localhost:3000','https://task-manager-tau-ten.vercel.app']}
 ))
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
