@@ -66,7 +66,7 @@ const updateUser = async (req, res) => {
             }
         )
         if (!userGet){
-            return res.status(404).json(`No such user $`)
+            return res.status(404).json(`No such user ${id}`)
         }
         res.status(200).json(userGet)
     } catch (error) {

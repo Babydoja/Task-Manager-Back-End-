@@ -10,8 +10,6 @@
 // server.listen(8001, ()=>{
 //     console.log('Server is running on port 8001')
 // })
-
-
 const express  = require('express')
 const app = express()
 const dotenv=require('dotenv').config()
@@ -19,17 +17,14 @@ const PORT = 8001
 const mongoose = require("mongoose")
 const userRoute = require('../route/Route')
 const cors = require('cors')
+
+app.use(express.json())
+app.use(express.urlencoded({ extended: false }))
 app.use(cors(
     // {origin: ['http://localhost:3000']}
     {origin: ['http://localhost:3000','https://task-manager-tau-ten.vercel.app']}
 ))
-app.use(express.json())
-app.use(express.urlencoded({ extended: false }))
 app.use(userRoute)
-
-
-
-
 // console.log(process.env.SBFENV)
 mongoose.connect (process.env.SBFENV)
 .then ((req,res)=>{

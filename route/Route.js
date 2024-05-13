@@ -3,6 +3,7 @@ const { createUser, getUser, getOneUser, deleteUser, updateUser } = require("../
 const User = require("../model/Model");
 const router = express.Router();
 
+
 router.post('/create_user', createUser);
 router.get('/create_user', getUser);
 router.get('/create_user/:id', getOneUser);
